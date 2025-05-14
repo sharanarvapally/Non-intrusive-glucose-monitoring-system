@@ -35,7 +35,7 @@ glucose\_dashboard/
    ```bash
    git clone https://github.com/sharanarvapally/Non-intrusive-glucose-monitoring-system.git
    cd Non-intrusive-glucose-monitoring-system/glucose_dashboard
-````
+
 
 2. **Create a virtual environment**
 
@@ -79,6 +79,8 @@ To enable email features, configure your Gmail credentials (or app password) sec
 * Mobile-responsive dashboard UI
 * Live charts with real-time updates
 
+````
+
 ## 📄 License
 
 This project is licensed under the MIT License.
@@ -86,7 +88,3 @@ This project is licensed under the MIT License.
 ```
 
 ---
-
-✅ Paste this into a new file called `README.md` in your repo root.  
-Let me know if you'd like a `requirements.txt` or badge icons (build status, Python version, etc.) added too.
-```
