@@ -79,7 +79,7 @@ To enable email features, configure your Gmail credentials (or app password) sec
 * Mobile-responsive dashboard UI
 * Live charts with real-time updates
 
-````
+
 
 ## 📄 License
 
