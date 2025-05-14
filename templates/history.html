@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction History</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 10px;
+            color: #333;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            text-align: center;
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Previous Predictions</h2>
+        {% if predictions %}
+            <table>
+                <tr>
+                    <th>Date & Time</th>
+                    <th>Temp (°C)</th>
+                    <th>SBP</th>
+                    <th>DBP</th>
+                    <th>HR</th>
+                    <th>HRV</th>
+                    <th>Glucose</th>
+                    <th>Diagnosis</th>
+                    <th>Insulin Dose</th>
+                </tr>
+                {% for p in predictions %}
+                    <tr>
+                        <td>{{ p.timestamp }}</td>
+                        <td>{{ p.temperature }}</td>
+                        <td>{{ p.sbp }}</td>
+                        <td>{{ p.dbp }}</td>
+                        <td>{{ p.heart_rate }}</td>
+                        <td>{{ p.hrv }}</td>
+                        <td>{{ p.glucose }}</td>
+                        <td>{{ p.diagnosis }}</td>
+                        <td>{{ p.insulin_dose }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No history found.</p>
+        {% endif %}
+
+        <div style="text-align: center;">
+            <a href="{{ url_for('dashboard') }}">← Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>
